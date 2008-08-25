@@ -1,0 +1,23 @@
+# Contributor: János Illés <ijanos@gmail.com>
+pkgname=hdsentinel
+pkgver=0.2
+pkgrel=1
+pkgdesc="Closed source HDD monitoring and analysis tool, using SMART"
+arch=('i686')
+url="http://www.hdsentinel.com/hdslin.php"
+license=('unknown')
+groups=()
+depends=()
+makedepends=()
+backup=()
+options=()
+install=
+source=(http://www.hdsentinel.com/hdslin/hdsentinel.gz)
+noextract=()
+md5sums=('34e87fa25b8b7ab84b112c3a6f602afd')
+
+build() {
+  install -m755 -D hdsentinel $pkgdir/usr/sbin/hdsentinel
+}
+
+# vim:set ts=2 sw=2 et:
