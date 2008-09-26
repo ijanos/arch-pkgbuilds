@@ -1,0 +1,20 @@
+# Contributor: János Illés <ijanos@gmail.com>
+pkgname=goofs
+pkgver=0.6
+pkgrel=1
+pkgdesc="A userspace filesystem to mount your google servicesdt"
+arch=('i686')
+url="http://code.google.com/p/goofs/"
+license=('GPL')
+depends=('python' 'python-fuse' 'python-gdata')
+source=(http://goofs.googlecode.com/files/$pkgname-$pkgver.tar.gz)
+md5sums=('b34063a6bec70d6fe080d0e0e3b22ad9')
+
+build() {
+  cd "$srcdir/$pkgname"
+
+  python setup.py build
+  python setup.py install --root=${startdir}/pkg
+}
+
+# vim:set ts=2 sw=2 et:
