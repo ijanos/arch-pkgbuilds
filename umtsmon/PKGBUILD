@@ -1,20 +1,21 @@
 # Contributor: János Illés <ijanos@gmail.com>
 pkgname=umtsmon
-pkgver=0.8
-pkgrel=2
+pkgver=0.9
+pkgrel=1
 pkgdesc="A tool to manage your 3G card (send sms, modify pin, monitor traffic)"
 url="http://umtsmon.sourceforge.net/"
 license="GPL"
 arch=('i686' 'x86_64')
 depends=('qt3' 'ppp' 'libusb')
 source=(http://dl.sourceforge.net/umtsmon/$pkgname-$pkgver.src.tar.gz)
-md5sums=('b7da0f7da6057a3079a0270fcc533d6f')
+md5sums=('2f9260d1fc69b230cf0035efa1a962f0')
 
 build() {
   export PATH=/opt/qt/bin:$PATH
   cd $startdir/src/$pkgname-$pkgver
   qmake || return 1 
   make clean all || return 1
+  lupdate umtsmon.pro ||return 1 
   lrelease umtsmon.pro ||return 1 
   install -m755 -D umtsmon $startdir/pkg/usr/sbin/umtsmon
   mkdir -p $startdir/pkg/usr/share/umtsmon/translations/
