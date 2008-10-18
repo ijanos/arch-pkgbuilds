@@ -1,0 +1,27 @@
+# Contributor: ViNS <gladiator@fastwebnet.it>
+pkgname=nethogs
+pkgver=0.6.1
+pkgrel=3
+pkgdesc="NetHogs is a small net top tool. Instead of breaking the traffic down per protocol or per subnet, like most tools do, it groups bandwidth by process. NetHogs does not rely on a special kernel module to be loaded."
+url="http://nethogs.sourceforge.net"
+license="GPL"
+depends=('libpcap')
+makedepends=()
+conflicts=()
+replaces=()
+backup=()
+arch=('i686' 'x86_64')
+
+install=
+source=(http://nethogs.sourceforge.net/$pkgname-$pkgver-pre2.tar.gz)
+md5sums=('48775d49fe488e601811fbfb09f6b37d')
+
+
+build() {
+  mkdir -p $startdir/pkg/usr/bin
+  mkdir -p $startdir/pkg/usr/man/man8
+  cd $startdir/src/$pkgname
+  sed -i "s:/usr/share/man/man8/:/usr/man/man8/:g" Makefile
+  make || return 1
+  make DESTDIR=$startdir/pkg install
+}
