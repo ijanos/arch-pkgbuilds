@@ -1,7 +1,7 @@
 # Contributor: János Illés <ijanos@gmail.com>
 pkgname=umtsmon
 pkgver=0.9
-pkgrel=4
+pkgrel=5
 pkgdesc="A tool to manage your UMTS (3G) card/device (send sms, modify pin, monitor traffic)"
 url="http://umtsmon.sourceforge.net/"
 license="GPL"
@@ -10,7 +10,7 @@ depends=('qt3' 'ppp' 'libusb')
 optdepends=('gksu: umtsmon will complain if gksu is missing, but works fine after ignoring the error message'
             'usb_modeswitch: devices with ZeroCD functionality may need this to get working'
             'polymer: nice looking QT3 theme without KDE dependencies')
-source=(http://dl.sourceforge.net/umtsmon/$pkgname-$pkgver.src.tar.gz)
+source=(http://downloads.sourceforge.net/$pkgname/$pkgname-$pkgver.src.tar.gz)
 md5sums=('2f9260d1fc69b230cf0035efa1a962f0')
 
 build() {
