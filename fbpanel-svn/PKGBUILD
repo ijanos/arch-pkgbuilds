@@ -1,5 +1,5 @@
 pkgname=fbpanel-svn
-pkgver=242
+pkgver=352
 pkgrel=1
 pkgdesc="NetWM compliant desktop panel - developement version"
 arch=('i686' 'x86_64')
