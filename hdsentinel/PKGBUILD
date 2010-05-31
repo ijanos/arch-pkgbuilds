@@ -1,9 +1,9 @@
 # Contributor: János Illés <ijanos@gmail.com>
 pkgname=hdsentinel
 pkgver=0.3
-pkgrel=1
+pkgrel=2
 pkgdesc="A freeware, closed source HDD monitoring and analysis tool, using SMART"
-arch=('i686' 'x86_64')
+arch=('i686')
 url="http://www.hdsentinel.com/hdslin.php"
 license=('unknown')
 depends=()
