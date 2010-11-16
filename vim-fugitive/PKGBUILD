@@ -1,6 +1,6 @@
 # Contributor: János Illés <ijanos@gmail.com>
 pkgname=vim-fugitive
-pkgver=20100313
+pkgver=20101116
 pkgrel=1
 pkgdesc="A git wrapper so awesome, it should be illegal. Latest git version"
 arch=('any')
