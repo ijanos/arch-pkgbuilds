@@ -11,11 +11,11 @@ makedepends=('git')
 provides=('python2-onedrive')
 conflicts=('python2-onedrive')
 options=(!emptydirs)
-source=("$pkgname"::'git://github.com/mk-fg/python-onedrive.git')
+source=('git://github.com/mk-fg/python-onedrive.git')
 md5sums=('SKIP')
 
 pkgver() {
-  cd "$srcdir"
+  cd "$srcdir/repo"
   printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
